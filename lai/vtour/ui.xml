@@ -1,0 +1,346 @@
+<krpano>
+
+
+
+<layer name="cjxz"  tooltip="场景选择" url="ui/ui-001.png" style="skin_tooltips" crop="0|0|80|80" state="open" keep="true" visible="true" scale="0.6" align="leftbottom" x="10" y="-100" onclick="switch(crop,80|0|80|80,0|0|80|80);if(layer[cjxz].state == close,tween(layer[thumbs].y,80,0.3),tween(layer[thumbs].y,-200,0.4)); switch(layer[cjxz].state,open,close); ">
+
+
+
+	<layer name="cjxz_wz"   style="word_caidan" keep="true" visible="true" align="bottom" x="0%" y="-60%"   html="场景选择"   onclick="switch(crop,80|0|80|80,0|0|80|80);if(layer[cjxz].state == close,tween(layer[thumbs].y,80,0.3),tween(layer[thumbs].y,-200,0.4)); switch(layer[cjxz].state,open,close); "/>
+
+
+
+</layer>
+
+
+
+<layer name="icon01" tooltip="项目简介" url="ui/ui-002.png" style="skin_tooltips" state="close" keep="true" visible="true" scale="0.6" align="leftbottom" x="70" y="-100" onclick="if(layer[sidebar].x == '200%',
+
+			tween(layer[colsemap].x,0,0.5, easeInOutQuad);
+
+			tween(layer[sidebar].x,0,0.5, easeInOutQuad,wait);
+
+			,
+
+			tween(layer[colsemap].x,200%,0.5, easeInOutQuad);
+
+			tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);
+
+			); ">
+
+
+
+	<layer name="icon01_1" style="word_caidan" keep="true" visible="true" align="bottom" x="0%" y="-60%"  html="项目简介" onclick=""/>
+
+
+
+</layer>
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+
+
+
+
+
+
+
+
+<layer name="quanping" tooltip="全屏" url="ui/ui-b.png" crop="0|0|80|80" style="skin_tooltips" scale="0.6" keep="true" visible="true" devices="all" align="righttop" x="10" y="10" 
+
+
+
+onclick="
+
+	quanping_part1();
+
+
+
+	set(hotspot[webvr_prev_scene].visible,false);
+
+
+
+	set(hotspot[webvr_next_scene].visible,false);
+
+
+
+	set(hotspot[vr_cursor].visible,false);
+
+
+
+"/>
+
+
+
+
+
+
+
+<layer name="quanping_2" tooltip="取消全屏" url="skin/skin_huang.png" crop="80|0|80|80" style="skin_tooltips" scale="0.6" keep="true" visible="false" devices="all" align="righttop" x="10" y="10" 
+
+
+
+onclick="
+
+
+
+js(init(get(xml.scene)));
+
+
+
+set(visible,false); 
+
+
+
+set(layer[quanping].visible,true); 
+
+
+
+set(layer[quanping].crop,0|0|80|80);
+
+
+
+set(layer[yinyue].visible,true);
+
+
+
+set(layer[xzkg].visible,true);
+
+//set(layer[vrms].visible,true);
+
+set(layer[skin_gyro].visible,true);
+
+
+
+set(layer[skin_vr].visible,true);
+
+
+
+set(layer[gbpl].visible,true);
+
+
+
+tween(layer[yinyue].y,60,0.5);
+
+
+
+tween(layer[xzkg].y,110,0.5);
+
+//tween(layer[vrms].y,160,0.5);
+
+tween(layer[skin_vr].y,110,0.5);
+
+
+
+tween(layer[skin_gyro].y,160,0.5);
+
+
+
+tween(layer[gbpl].y,210,0.5);
+
+
+
+tween(layer[cjxz].y,27,0.7);
+
+
+
+tween(layer[icon01].y,27,0.7);
+
+
+
+tween(layer[icon02].y,27,0.7);
+
+
+
+tween(layer[xinxi].y,27,0.7);
+
+
+
+tween(layer[dianzan].y,27,0.7);
+
+
+
+tween(layer[pinglun].y,27,0.7);
+
+
+
+tween(layer[hxt].x,10,0.7);
+
+
+
+tween(layer[zzxx].y,5,0.5); 
+
+
+
+"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<layer name="yinyue" tooltip="音乐开关" url="ui/ui-a.png" style="skin_tooltips" crop="0|0|80|80" scale="0.6" keep="true" visible="true" devices="all" align="righttop" x="10" y="60" onclick="switch(crop,80|0|80|80,0|0|80|80); pausesoundtoggle(bgmusic);"/>
+
+<layer name="xzkg" tooltip="旋转开关" url="ui/ui-c.png" style="skin_tooltips" crop="0|0|80|80" scale="0.6" keep="true" visible="true" devices="all" align="righttop" x="10" y="110" onclick="switch(crop,80|0|80|80,0|0|80|80); switch(autorotate.enabled);"/>
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                         
+
+
+
+                                                                                                                                                                                                                          
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                        
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+
+
+
+
+
+<layer name="pinglun" tooltip="一键导航" style="skin_tooltips" url="ui/ui-006.png" scale="0.6" keep="true" visible="true" devices="all" align="rightbottom" x="15" y="-100" onclick="openurl(http://l.map.qq.com/374029008?m);">
+
+
+
+	<layer name="pinglun_wz" style="word_caidan" keep="true" visible="true" align="bottom" x="0" y="-60%" html="一键导航" onclick="openurl(http://l.map.qq.com/374029008?m);"/>
+
+
+
+</layer>
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                      
+
+
+
+
+
+<layer name="xinxi" tooltip="户型简介" style="skin_tooltips" url="ui/ui-007.png"  scale="0.6" keep="true" visible="true" devices="all" align="leftbottom" x="130" y="-100" onclick="tween(layer[textbox].x,0,0.5);				
+
+				set(control.mousefovchange, 0);
+
+				set(control.touchzoom, false);
+
+								">
+
+
+
+	<layer name="xinxi_wz" style="word_caidan"  keep="true" visible="true" align="bottom" x="0" y="-60%" html="户型简介" 
+
+		onclick="tween(layer[textbox].x,0,0.5);				
+
+				set(control.mousefovchange, 0);
+
+				set(control.touchzoom, false); 
+
+		
+
+		"/>
+
+
+
+</layer>
+
+
+
+<layer name="icon03" tooltip="tel:15083635608" style="skin_tooltips" url="ui/ui-003.png"  scale="0.6" keep="true" visible="true" devices="all" align="rightbottom" x="75" y="-100" onclick="openurl('tel:15083635608',_self);">
+
+
+
+	<layer name="icon03_01" style="word_caidan" keep="true" visible="true" align="bottom" x="0" y="-60%" html="电话咨询" onclick="openurl('tel:15083635608',_self);"/>
+
+
+
+</layer>
+
+
+
+<layer name="logoleft" tooltip="进入官网" style="skin_tooltips" url="ui/logoleft.png"  alpha="1" scale="0.7" scale.mobile="0.6" keep="true" visible="true" devices="all" align="lefttop" x="15" y="-150" onclick="openurl(http://www.baidu.com);"/>
+
+
+<!--
+<layer name="vrms"   tooltip="VR模式"    style="skin_tooltips"   url="ui/ui-m.png"   crop="240|0|80|80"  scale="0.6" keep="true" visible="true" devices="all" align="righttop" x="10" y="160" onclick="webvr.enterVR();" visible="false" /> 
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

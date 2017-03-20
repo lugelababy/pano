@@ -1,0 +1,355 @@
+<krpano>
+
+
+
+
+
+
+
+	                                               
+
+	<style name="text"
+
+	       url="%SWFPATH%/plugins/textfield.swf"
+
+	       background="false"
+
+	       css="color:#FFFFFF;"
+
+	       enabled="false"
+
+	       />
+
+
+
+	                                                                                      
+
+
+
+
+
+
+
+	                                                                                      
+
+
+
+
+
+	                           
+
+	
+
+	<action name="dragpic">
+
+		if(!startzoom,
+
+		if(%1 != dragging,
+
+
+
+			copy(drag_currentx, x);
+
+
+
+			copy(drag_currenty, y);
+
+
+
+			copy(drag_stagex, mouse.stagex);
+
+
+
+			copy(drag_stagey, mouse.stagey);
+
+
+
+			set(drag_sx, +1);
+
+
+
+			set(drag_sy, +1);
+
+
+
+			if(align == righttop,    set(drag_sx,-1); );
+
+
+
+			if(align == right,       set(drag_sx,-1); );
+
+
+
+			if(align == rightbottom, set(drag_sx,-1); set(drag_sy,-1); );
+
+
+
+			if(align == bottom,      set(drag_sy,-1); );
+
+
+
+			if(align == leftbottom,  set(drag_sy,-1); );
+
+
+
+			dragpic(dragging);
+
+
+
+		  ,
+
+
+
+			if(pressed,
+
+
+
+				sub(dx, mouse.stagex, drag_stagex);
+
+
+
+				sub(dy, mouse.stagey, drag_stagey);
+
+
+
+				mul(dx, drag_sx);
+
+
+
+				mul(dy, drag_sy);
+
+
+
+				add(x, drag_currentx, dx);
+
+
+
+				add(y, drag_currenty, dy);
+
+
+
+				delayedcall(0, dragpic(dragging) );
+
+
+
+			  );
+
+
+
+		  );
+
+		  );
+
+
+
+	</action>
+
+	
+
+	
+
+	<layer name="textbox" keep="true" type="container" align="" x="200%" y="0"  width="100%" height="100%" bgcolor="0x000000" bgalpha="0.7" handcursor="false" bgcapture="true"  maskchildren="true">
+
+		<layer name="closepic" url="%SWFPATH%/img/closebtn.png" align="righttop" scale="0.5" zorder="2" 
+
+			onclick="tween(layer[textbox].x,200%,0.5);
+
+				set(control.mousefovchange, 1);
+
+				set(control.touchzoom, true);
+
+				set(layer[textbox2].scale,1);
+
+				set(layer[showphoto].scale,1);
+
+				set(layer[textbox2].x,0);
+
+				set(layer[textbox2].y,0);
+
+				
+
+				
+
+				">
+
+		</layer>
+
+	
+
+		<layer name="textbox2" keep="true" type="container" align="center" x="0" y="0"  width="100%" height="100%" bgcolor="0x44AADD" bgalpha="0" handcursor="false" bgcapture="true"  maskchildren="true" ondown="set(startzoom, false);dragpic();">
+
+	
+
+			<layer name="showphoto" url="%SWFPATH%/img/i02.jpg" align="center" height="100%" width="prop"  maskchildren="false" enabled="false"
+
+				>	
+
+			</layer>
+
+		</layer>
+
+
+
+	</layer>
+
+	
+
+	
+
+
+
+
+
+	<events onmousewheel="map_zoom();" />
+
+	
+
+	<action name="map_zoom">
+
+		if(!control.touchzoom,
+
+			set(startzoom, true);
+
+			if(wheeldelta GT 0,
+
+				if(layer[textbox2].scale LT 2,
+
+					add(layer[textbox2].scale,0.1);
+
+					layer[showphoto].updatepos();
+
+					layer[textbox2].updatepos();
+
+					
+
+				);				
+
+				,
+
+				if(layer[textbox2].scale GT 1,
+
+					sub(layer[textbox2].scale,0.1);
+
+					layer[showphoto].updatepos();
+
+					layer[textbox2].updatepos();
+
+				);
+
+			);
+
+		
+
+			
+
+		);
+
+	</action>
+
+	
+
+	
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+	
+
+	
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+
+
+
+
+<data name="testtext">
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+
+[br/]
+
+[br/]
+
+
+[br/]
+
+[br/]
+
+
+
+
+
+	</data>
+
+
+
+</krpano>
+

@@ -1,0 +1,111 @@
+<krpano>			
+
+	<action name="activatespot">
+
+		                                                                    
+
+		copy(layer[radar].x, layer[%1].x);
+
+		copy(layer[radar].y, layer[%1].y);
+
+		copy(layer[activespot].x, layer[%1].x);
+
+		copy(layer[activespot].y, layer[%1].y);
+
+                                      
+
+		set(layer[radar].heading, %2);
+
+
+
+		                                          
+
+		set(layer[radar].visible, true);
+
+		set(layer[activespot].visible, true);
+
+		
+
+		                                    
+
+		set(scx,0);
+
+		set(scy,0);
+
+		mul(scx,layer[%1].x,layer[scrollareamap].scale);
+
+		mul(scy,layer[%1].y,layer[scrollareamap].scale);
+
+			
+
+	</action>
+
+			<layer name="colsemap" type="image" url="%SWFPATH%/map/colsemap.png"  align="topcenter" x="200%" y="5%" keep="true" zorder="23"   scale="1"
+
+	onclick="
+
+			tween(layer[colsemap].x,200%,0.5, easeInOutQuad);
+
+			tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);
+
+			"
+
+	/>
+
+
+
+	<style name="mapspot" url="%SWFPATH%/skin/vtourskin_mapspot.png" scale="1"  align="lefttop" edge="center" />	
+
+	<layer name="sidebar" visible="true" keep="true" zorder="22"  type="container" autorotateenabled="false" align="center" x="200%" y="0" width="100%" height="100%"  bgcolor="0x000000" bgalpha="0.5">	
+
+	
+
+		<layer name="scrollareamap" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="center" x="0" y="0" width="100%" height="100%"  direction="all"  onloaded="activatespot(scene_4,140);" >
+
+			<layer name="map" url="%SWFPATH%/map/map.png" align="center" visible="true" scalechildren="true" maskchildren="true" alpha="1"  scale="1" scale.mobile="0.8">				
+
+					<layer name="radar" visible="false"
+
+				       url="%SWFPATH%/plugins/radar.swf" alturl="%SWFPATH%/plugins/radar.js"
+
+				       align="lefttop" edge="center" zorder="1"
+
+				       scale="0.4"
+
+				       fillcolor="0xffffff" fillalpha="0.5"
+
+				       linecolor="0xe70000" linewidth="1" linealpha="1"
+
+				       headingoffset="0"
+
+				    />
+
+				<layer name="activespot" url="%SWFPATH%/skin/vtourskin_mapspotactive.png" align="lefttop" scale="1" edge="center" zorder="3" visible="false" enabled="false" />
+
+				<layer name="map_spot01" style="mapspot" x="255" y="400" zorder="2" onhover="showtext(客厅);" onclick="loadscene(scene_4,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />		
+
+				<layer name="map_spot02" style="mapspot" x="486" y="317" zorder="2" onhover="showtext(餐厅);" onclick="loadscene(scene_1,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+
+			    <layer name="map_spot03" style="mapspot" x="493" y="388" zorder="2" onhover="showtext(厨房);" onclick="loadscene(scene_2,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+
+			    <layer name="map_spot04" style="mapspot" x="306" y="275" zorder="2" onhover="showtext(公主房);" onclick="loadscene(scene_3,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+
+				<layer name="map_spot05" style="mapspot" x="492" y="150" zorder="2" onhover="showtext(男孩房);" onclick="loadscene(scene_5,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+				<layer name="map_spot06" style="mapspot" x="256" y="132" zorder="2" onhover="showtext(主卧);" onclick="loadscene(scene_8,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+				<layer name="map_spot07" style="mapspot" x="488" y="246" zorder="2" onhover="showtext(卫浴间);" onclick="loadscene(scene_6,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+               
+                <layer name="map_spot09" style="mapspot" x="362" y="116" zorder="2" onhover="showtext(主卧卫生间);" onclick="loadscene(scene_9,null,MERGE,BLEND(0.5));skin_updatescroll();tween(layer[colsemap].x,200%,0.5, easeInOutQuad);tween(layer[sidebar].x,200%,0.5, easeInOutQuad,wait);" />	
+			
+
+			</layer>
+
+		</layer>
+
+		
+
+	</layer>
+
+	
+
+</krpano>
+
